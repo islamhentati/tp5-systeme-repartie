@@ -1,0 +1,24 @@
+package Service;
+
+
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class ConversionImpl extends UnicastRemoteObject implements IConversion {
+
+
+
+
+    private static final double TAUX= 3.35;
+
+    public ConversionImpl() throws RemoteException {
+        super();
+    }
+
+    @Override
+    public double convertirMontant(double mt) throws RemoteException {
+        System.out.println("Conversion demandée : " + mt + " EUR");
+        return mt * TAUX;
+    }
+}
